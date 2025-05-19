@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobCenter.mn - Монголын ажлын байр</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="language-toggle">
+            <button onclick="setLanguage('mn')">Монгол</button>
+            <button onclick="setLanguage('en')">English</button>
+        </div>
+        <h1>JobCenter.mn</h1>
+        <p class="tagline" data-en="Mongolia's Leading Job Platform" data-mn="Монголын шилдэг ажлын байрны платформ">Монголын шилдэг ажлын байрны платформ</p>
+        <img src="banner.jpg" alt="Banner Photo" class="banner-photo">
+        <nav>
+            <ul>
+                <li><a href="#jobs" data-en="Jobs" data-mn="Ажлын байр">Ажлын байр</a></li>
+                <li><a href="#apply" data-en="Apply" data-mn="Анкет илгээх">Анкет илгээх</a></li>
+                <li><a href="#dashboard" data-en="Dashboard" data-mn="Хувийн хэрэг">Хувийн хэрэг</a></li>
+                <li><a href="#admin" data-en="Admin" data-mn="Админ">Админ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="jobs">
+            <h2 data-en="Current Openings" data-mn="Нээлттэй ажлын байр">Нээлттэй ажлын байр</h2>
+            <div class="job-listings" id="jobListings"></div>
+        </section>
+
+        <section id="apply">
+            <h2 data-en="Apply for a Position" data-mn="Анкет илгээх">Анкет илгээх</h2>
+            <form id="applicationForm">
+                <label for="name" data-en="Full Name" data-mn="Бүтэн нэр">Бүтэн нэр</label>
+                <input type="text" id="name" required>
+                
+                <label for="email" data-en="Email" data-mn="Имэйл">Имэйл</label>
+                <input type="email" id="email" required>
+                
+                <label for="phone" data-en="Phone" data-mn="Утасны дугаар">Утасны дугаар</label>
+                <input type="tel" id="phone">
+                
+                <label for="position" data-en="Position" data-mn="Ажлын байр">Ажлын байр</label>
+                <select id="position" required>
+                    <option value="" data-en="Select a position" data-mn="Ажлын байр сонгох">Ажлын байр сонгох</option>
+                </select>
+                
+                <label for="resume" data-en="Resume (PDF)" data-mn="Анкет (PDF)">Анкет (PDF)</label>
+                <input type="file" id="resume" accept=".pdf">
+                
+                <label for="coverLetter" data-en="Cover Letter" data-mn="Илгээх хүсэлт">Илгээх хүсэлт</label>
+                <textarea id="coverLetter"></textarea>
+                
+                <button type="submit" data-en="Submit Application" data-mn="Анкет илгээх">Анкет илгээх</button>
+            </form>
+        </section>
+
+        <section id="dashboard" class="hidden">
+            <h2 data-en="Candidate Dashboard" data-mn="Хувийн хэрэг">Хувийн хэрэг</h2>
+            <div id="applicationStatus"></div>
+        </section>
+
+        <section id="admin" class="hidden">
+            <h2 data-en="Admin Panel" data-mn="Админ хэсэг">Админ хэсэг</h2>
+            <div class="admin-actions">
+                <button id="addJobBtn" data-en="Add New Job" data-mn="Шинэ ажлын байр нэмэх">Шинэ ажлын байр нэмэх</button>
+                <button id="viewApplicationsBtn" data-en="View Applications" data-mn="Анкет харах">Анкет харах</button>
+            </div>
+            <div id="adminContent"></div>
+        </section>
+
+        <section id="photos">
+            <h2 data-en="Gallery" data-mn="Зургийн цомог">Зургийн цомог</h2>
+            <div class="photo-gallery">
+                <img src="photo1.jpg" alt="Photo 1">
+                <img src="photo2.jpg" alt="Photo 2">
+                <img src="photo3.jpg" alt="Photo 3">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> JobCenter.mn</p>
+        <p data-en="All rights reserved" data-mn="Бүх эрх хуулиар хамгаалагдсан">Бүх эрх хуулиар хамгаалагдсан</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
