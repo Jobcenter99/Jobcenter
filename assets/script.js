@@ -9,13 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
         applicationForm.reset();
     });
 
-    const setLanguage = (lang) => {
+    window.setLanguage = (lang) => {
         document.querySelectorAll('[data-en], [data-mn]').forEach(el => {
             el.textContent = el.getAttribute(`data-${lang}`);
         });
     };
 
-    // Example job listings
     const jobListings = [
         { title: 'Software Developer', location: 'Ulaanbaatar', description: 'Develop and maintain web applications.' },
         { title: 'Project Manager', location: 'Erdenet', description: 'Manage project timelines and deliverables.' }
